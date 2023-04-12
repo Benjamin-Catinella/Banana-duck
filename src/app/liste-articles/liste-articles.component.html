@@ -1,0 +1,27 @@
+<div class="columns">
+  <div class="column parent-scrollable">
+    <div class="has-text-centered-desktop heading">Liste des articles</div>
+    <div class="scrollable">
+      <div class="card is-half is-offset-one-quarter m-5" *ngFor="let article of articles$ | async | keyvalue">
+        <div class="card-content" [ngStyle]="{'background-color': getBackgroundColor(article.value.id)}">
+          <div class="media-content">
+            <p class="title is-4">{{article.value.nom}}</p>
+            <p class="subtitle is-12">{{article.value.description}}</p>
+            <p class="subtitle is-6">{{article.value.prix}}€</p>
+            <div class="columns">
+              <div class="column">
+                <button class="button is-primary">Modifier</button>
+              </div>
+              <div class="column">
+                <button class="button is-danger" (click)="deleteArticle(article.value)">Supprimer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-two-thirds">
+    <app-editor-component></app-editor-component>
+  </div>
+</div>

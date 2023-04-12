@@ -1,0 +1,7 @@
+// Centered class for a div element taking the rest of the page
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

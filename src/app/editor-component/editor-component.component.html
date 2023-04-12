@@ -1,0 +1,31 @@
+<div class="field">
+  <label class="label" for="nom">Nom: </label>
+  <p class="help">
+    Le nom doit contenir au moins 3 caractères et ne doit pas contenir de chiffres
+  </p>
+  <input class="input" id="nom" type="text" [formControl]="nom"
+         [ngClass]="nomValide ? '' : 'is-danger'"/>
+  <p class="help is-danger" *ngIf="!nomValide">
+    Le nom est invalide
+  </p>
+</div>
+
+<div class="field">
+  <label class="label" for="description">Description: </label>
+  <input class="input" id="description" type="text" [formControl]="description"
+         [ngClass]="descriptionValide ? '' : 'is-danger'"/>
+</div>
+
+<div class="field">
+  <label class="label" for="prix">Prix: </label>
+  <p class="help">
+    Le prix doit être un nombre positif
+  </p>
+  <input class="input" id="prix" type="text" [formControl]="prix"
+         [ngClass]="prixValide ? '' : 'is-danger'"/>
+  <p class="help is-danger" *ngIf="!prixValide">
+    Le prix est invalide
+  </p>
+</div>
+
+<button (click)="addArticle()" class="button is-link">Add article</button>
