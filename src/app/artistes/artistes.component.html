@@ -1,6 +1,6 @@
 <div class="columns is-desktop parent-scrollable">
   <div class="column is-two-thirds columns is-desktop is-multiline scrollable">
-    <div class="column card is-one-fifth is-offset-1 mb-3" *ngFor="let artiste of artistes">
+    <div class="column card is-one-fifth is-offset-1 mb-3" *ngFor="let artiste of artistes$ | async">
       <div class="card-image">
         <img class="image" src="{{artiste.photo}}" alt="photo">
       </div>

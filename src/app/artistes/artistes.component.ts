@@ -1,29 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ArtistesService} from "./artistes.service";
 import {Artiste} from "./artiste";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-artistes',
   templateUrl: './artistes.component.html',
   styleUrls: ['./artistes.component.scss']
 })
-export class ArtistesComponent implements OnInit {
+export class ArtistesComponent implements OnInit, OnDestroy {
 
-  artistes: Artiste[] = []
-
+  artistes$: Observable<Artiste[]> = this.artistesService.artistes$;
+  public subscribeInterval: any;
   constructor(private artistesService: ArtistesService) { }
 
   ngOnInit(): void {
-    this.artistesService.getArtistes().subscribe(data => {
-      this.artistes = data
-    });
-
+    this.artistesService.getArtistes();
+    this.subscribeInterval= setInterval(() => {
+      this.artistesService.getArtistes();
+    }, 1000);
   }
 
   deleteArtiste(id: number) {
-    this.artistesService.deleteArtiste(id).subscribe(data => {
-      this.artistes = this.artistes.filter(artiste => artiste.id !== id)
-    })
+    this.artistesService.deleteArtiste(id);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.subscribeInterval);
   }
 
 }
