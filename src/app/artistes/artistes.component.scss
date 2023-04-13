@@ -1,0 +1,12 @@
+// bulma gap
+$column-gap: 15rem;
+
+// Class to make a scrollable div
+.parent-scrollable {
+  height: 50rem;
+}
+.scrollable {
+  overflow-y: scroll;
+  height: 100%
+
+}

@@ -1,33 +1,36 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div id="navbarBasicExample" class="navbar-menu card is-bordered mb-5">
+  <div class="navbar-menu card is-bordered mb-5">
     <div class="navbar-start">
-      <div class="navbar-brand">
+      <div class="navbar-brand tabs">
+        <ul>
 
-        <div class="navbar-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/2494/2494112.png" width="28" height="28">
-          <img src="https://cdn-icons-png.flaticon.com/512/1012/1012600.png" width="28" height="28">
-          <p class="is-size-5">&nbsp; Banana Duck</p>
-        </div>
-        <div class="navbar-item">
-          <a routerLink="/home">
-            Accueil
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a routerLink="/articles">
-            Liste des articles
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a routerLink="artistes">
-            Artistes
-          </a>
-        </div>
-        <div class="navbar-item">
-          <a routerLink="about">
-            A propos
-          </a>
-        </div>
+          <div class="navbar-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2494/2494112.png" width="28" height="28">
+            <img src="https://cdn-icons-png.flaticon.com/512/1012/1012600.png" width="28" height="28">
+            <p class="is-size-5">&nbsp; Banana Duck</p>
+          </div>
+          <li class="navbar-item" [ngClass]="{'is-active': activeTab === '/home'}">
+            <a routerLink="/home">
+              Accueil
+            </a>
+          </li>
+          <li class="navbar-item" [ngClass]="{'is-active': activeTab === '/articles'}">
+            <a routerLink="/articles">
+              Liste des articles
+            </a>
+          </li>
+          <li class="navbar-item" [ngClass]="{'is-active': activeTab === '/artistes'}">
+            <a routerLink="artistes">
+              Artistes
+            </a>
+          </li>
+          <li class="navbar-item" [ngClass]="{'is-active': activeTab === '/about'}">
+            <a routerLink="about">
+              A propos
+            </a>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ArticleService implements OnInit {
 
-  private _articles: BehaviorSubject<Map<number, Article>> = new BehaviorSubject<Map<number, Article>>(new Map<number, Article>());
+  public _articles: BehaviorSubject<Map<number, Article>> = new BehaviorSubject<Map<number, Article>>(new Map<number, Article>());
 
   articles = this._articles.asObservable();
   index: number = 0;

@@ -53,6 +53,20 @@ describe('ArticleServiceService', () => {
     // Then
     expect(findArticleByName(service.getArticles(), 'Canard en caoutchouc')).toBeNull();
   });
+
+  // should test next is called when adding an article
+  it('should call next when adding an article', () => {
+    // Given
+    let article = new Article('Canard en caoutchouc', 0.5, 'Petit canard en caoutchouc');
+    let spy = spyOn(service._articles, 'next');
+
+    // When
+    service.addArticle(article);
+
+    // Then
+    expect(spy).toHaveBeenCalled();
+  });
+
 });
 
 function findArticleByName(articles : Article[] , nom : string ) : Article | null {

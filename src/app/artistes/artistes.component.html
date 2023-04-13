@@ -1,0 +1,18 @@
+<div class="columns is-desktop parent-scrollable">
+  <div class="column is-two-thirds columns is-desktop is-multiline scrollable">
+    <div class="column card is-one-fifth is-offset-1 mb-3" *ngFor="let artiste of artistes">
+      <div class="card-image">
+        <img class="image" src="{{artiste.photo}}" alt="photo">
+      </div>
+      <div class="card-content">
+        <div class="title is-5 has-text-centered">{{artiste.name}}</div>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-item">
+          <button class="button is-danger is-outlined" (click)="deleteArtiste(artiste.id)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-artiste-editor-component class="column"></app-artiste-editor-component>
+</div>

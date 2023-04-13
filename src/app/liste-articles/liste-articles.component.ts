@@ -26,6 +26,7 @@ public articles$: Observable<Map<number, Article>> = this.articleService.article
   ngOnInit(): void {
     // Shuffle randomly the colors
     this.colors.sort(() => Math.random() - 0.5);
+    this.articleService.emptyArticles();
     this.articleService.addArticle(new Article('Canard en caoutchouc', 0.5, 'Petit canard en caoutchouc'));
     this.articleService.addArticle(new Article( 'Canard en plastique', 1, 'Petit canard en plastique'));
     this.articleService.addArticle(new Article( 'Canard en bois', 2.55, 'Petit canard en bois'));

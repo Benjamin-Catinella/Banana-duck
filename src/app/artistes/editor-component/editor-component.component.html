@@ -1,0 +1,26 @@
+
+  <div class="field">
+    <label class="label" for="nom">Nom: </label>
+    <p class="help">
+      Le nom doit contenir au moins 3 caractères et ne doit pas contenir de chiffres
+    </p>
+    <input class="input" id="nom" type="text" [formControl]="nom"
+           [ngClass]="nomValide ? '' : 'is-danger'"/>
+    <p class="help is-danger" *ngIf="!nomValide">
+      Le nom est invalide
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label" for="photoUrl">Photo URL: </label>
+    <p class="help">
+      L'URL doit être valide
+    </p>
+    <input class="input" id="photoUrl" type="text" [formControl]="photo"
+           [ngClass]="photoValide ? '' : 'is-danger'"/>
+    <p class="help is-danger" *ngIf="!photoValide">
+      L'URL est invalide
+    </p>
+  </div>
+
+  <button (click)="addArtiste()" class="button is-link">Add article</button>

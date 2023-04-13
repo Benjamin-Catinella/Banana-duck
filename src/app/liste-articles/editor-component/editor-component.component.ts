@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {ArticleService} from "../liste-articles/article.service";
-import {Article} from "../liste-articles/article";
+import {ArticleService} from "../article.service";
+import {Article} from "../article";
 
 @Component({
   selector: 'app-editor-component',
