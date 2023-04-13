@@ -10,7 +10,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { EditorComponentComponent } from './editor-component/editor-component.component';
 import { AboutComponent } from './about/about.component';
 import { ArtistesComponent } from './artistes/artistes.component';
-import { ServiceComponent } from './artistes/service/service.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { ServiceComponent } from './artistes/service/service.component';
     NavbarComponent,
     EditorComponentComponent,
     AboutComponent,
-    ArtistesComponent,
-    ServiceComponent
+    ArtistesComponent
   ],
   imports: [
     ReactiveFormsModule,
